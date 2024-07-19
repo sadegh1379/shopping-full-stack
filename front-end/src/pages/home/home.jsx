@@ -1,13 +1,13 @@
+import { useState } from "react";
+import { ExploreMenu, Header } from "../../components";
 import "./home.scss";
 
 export const Home = () => {
+  const [category, setCategory] = useState("All");
   return (
-    <div className="header">
-      <div className="header_contents">
-        <h2>لباس مورد علاقه خودت رو انتخاب کن</h2>
-        <p>مناسب ترین قیمت ها و کیفیت را با ما تجربه کنید</p>
-        <button>منو</button>
-      </div>
+    <div>
+      <Header />
+      <ExploreMenu category={category} setCategory={setCategory} />
     </div>
   );
 };
