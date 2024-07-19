@@ -1,3 +1,8 @@
+:root {
+  --bg-pink-500: #e91e63;
+  --text-pink-500: #e91e63;
+}
+
 @font-face {
   font-family: digi-kala;
   src: url("./assets/fonts/digi-kala_font.ttf");
@@ -17,9 +22,19 @@ a {
 
 body {
   min-height: 100vh;
+  direction: rtl;
 }
 
 .app {
   width: 80%;
   margin: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
