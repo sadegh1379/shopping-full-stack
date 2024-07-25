@@ -29,17 +29,46 @@
     img {
       width: 70px;
     }
+  }
 
-    .dress_item_des {
-      color: #676767;
-      font-size: 12px;
+  .dress_item_des {
+    color: #676767;
+    font-size: 12px;
+  }
+
+  .dress_item_price {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 5px 0;
+    text-align: left;
+  }
+
+  .dress_item_image_container {
+    position: relative;
+    .add {
+      width: 35px;
+      position: absolute;
+      bottom: 25px;
+      right: 15px;
+      cursor: pointer;
+      border-radius: 50%;
     }
 
-    .dress_item_price {
-      color: var(--text-pink-500);
-      font-size: 22px;
-      font-weight: 500;
-      margin: 10px 0;
+    .dress_item_counter {
+      position: absolute;
+      bottom: 25px;
+      right: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px;
+      border-radius: 50px;
+      background-color: white;
+
+      img {
+        width: 30px;
+        cursor: pointer;
+      }
     }
   }
 }

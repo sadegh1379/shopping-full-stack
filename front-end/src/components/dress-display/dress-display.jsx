@@ -12,7 +12,7 @@ export const DressDisplay = () => {
         {food_list.map((item, index) => (
           <DressItem
             key={index}
-            id={item.id}
+            id={item._id}
             name={item.name}
             price={item.price}
             description={item.description}
