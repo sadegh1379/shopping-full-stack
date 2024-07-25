@@ -13,6 +13,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: digi-kala;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -28,6 +29,10 @@ body {
 .app {
   width: 80%;
   margin: auto;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 @keyframes fadeIn {

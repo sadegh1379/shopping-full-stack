@@ -1,37 +1,36 @@
 import react, { useState } from "react";
 import "./navbar.scss";
 import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ setShowLoginModal }) => {
   const [activeMenu, setActiveMenu] = useState("home");
   return (
     <div className="navbar">
       <img src={assets.logo} alt="" className="logo" />
       <ul className="navbar_menu">
-        <li
+        <Link
+          to="/"
           onClick={() => setActiveMenu("home")}
           className={`${activeMenu === "home" && "active"}`}
         >
           خانه
-        </li>
-        <li
+        </Link>
+        <a
+          href="#explore_menu"
           onClick={() => setActiveMenu("menu")}
           className={`${activeMenu === "menu" && "active"}`}
         >
           منو
-        </li>
-        <li
-          onClick={() => setActiveMenu("mobile")}
-          className={`${activeMenu === "mobile" && "active"}`}
-        >
-          موبایل اپ
-        </li>
-        <li
+        </a>
+
+        <a
+          href="#footer"
           onClick={() => setActiveMenu("us")}
           className={`${activeMenu === "us" && "active"}`}
         >
           درباره ما
-        </li>
+        </a>
       </ul>
       <div className="navbar_right">
         <img src={assets.search_icon} alt="" />
@@ -39,7 +38,7 @@ export const Navbar = () => {
           <img src={assets.basket_icon} alt="" />
           <div className="dot"></div>
         </div>
-        <button>sign in</button>
+        <button onClick={() => setShowLoginModal(true)}>sign in</button>
       </div>
     </div>
   );
