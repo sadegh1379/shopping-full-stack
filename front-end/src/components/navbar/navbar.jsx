@@ -35,7 +35,9 @@ export const Navbar = ({ setShowLoginModal }) => {
       <div className="navbar_right">
         <img src={assets.search_icon} alt="" />
         <div className="navbar_search_icon">
-          <img src={assets.basket_icon} alt="" />
+          <Link to="/cart">
+            <img src={assets.basket_icon} alt="" />
+          </Link>
           <div className="dot"></div>
         </div>
         <button onClick={() => setShowLoginModal(true)}>sign in</button>
