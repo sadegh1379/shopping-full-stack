@@ -5,9 +5,9 @@ import { StoreContext } from "../../context/store-context";
 
 export const Home = () => {
   const [category, setCategory] = useState("All");
-  const { food_list } = useContext(StoreContext);
+  const { dress_list } = useContext(StoreContext);
 
-  console.log(food_list);
+  console.log(dress_list);
   return (
     <div>
       <Header />

@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { StoreContext } from "../../context/store-context";
-import { food_list } from "../../assets/assets";
+import { dress_list } from "../../assets/assets";
 import "./cart.scss";
+import { useNavigate } from "react-router-dom";
 
 export const Cart = () => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, removeFromCart, getTotalCartAmount } =
+    useContext(StoreContext);
+
+  const navigate = useNavigate();
 
   return (
     <div className="cart">
@@ -19,7 +23,7 @@ export const Cart = () => {
         </div>
         <br />
         <hr />
-        {food_list.map((item, index) => {
+        {dress_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
               <div key={index}>
@@ -41,6 +45,37 @@ export const Cart = () => {
             );
           }
         })}
+      </div>
+      <div className="cart_bottom">
+        <div className="cart_total">
+          <h2>جمع سبد خرید</h2>
+          <div>
+            <div className="cart_total_details">
+              <p>جمع فرعی</p>
+              <p>{getTotalCartAmount()}</p>
+            </div>
+            <hr />
+            <div className="cart_total_details">
+              <p>کارمزد</p>
+              <p>{2}</p>
+            </div>
+            <hr />
+            <div className="cart_total_details">
+              <b>جمع</b>
+              <b>{getTotalCartAmount() + 2}</b>
+            </div>
+          </div>
+          <button onClick={() => navigate("/order")}>ادامه خرید</button>
+        </div>
+        <div className="cart_promocode">
+          <div>
+            <p>اگر کد تخفیف دارید؟وارد کنید</p>
+            <div className="promocode_input">
+              <input type="text" placeholder="کد تخفیف" />
+              <button>اعمال</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
